@@ -36,7 +36,7 @@ class Create extends Component {
     name === 'origin_id' && this.handleDestination(event.target.value)
   }
   getDestinations(id){
-    apiService('GET',`https://0sysjslkra.execute-api.us-east-1.amazonaws.com/test/stations/origins/${id}`)
+    apiService('GET',`/api/origins/${id}`)
       .then((response) => this.setState({ destinations: response.data.data.stations }))
   }
   saveForm = () => {
