@@ -58,6 +58,13 @@ module.exports = {
     port: 9090,
     hot: true,
     headers: { 'Access-Control-Allow-Origin': '*' },
-    historyApiFallback: true
+    historyApiFallback: true,
+    proxy: {
+      '/api/origins': {
+        target: 'https://0sysjslkra.execute-api.us-east-1.amazonaws.com/test/stations/origins',
+        pathRewrite: {'^/api/origins' : ''},
+        changeOrigin: true,
+      }
+    }
   }
 }

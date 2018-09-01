@@ -21,7 +21,7 @@ class App extends Component {
     this.state = {origins: [], routes: []};
   }
   componentDidMount() {
-    apiService('GET','https://0sysjslkra.execute-api.us-east-1.amazonaws.com/test/stations/origins')
+    apiService('GET','/api/origins')
       .then((response) => this.setState({ origins: response.data.data.stations }))
       this.getRoutes()
   }
